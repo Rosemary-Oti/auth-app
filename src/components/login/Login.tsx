@@ -176,13 +176,13 @@ const Login: React.FC = () => {
           </button>
         </form>
         <div className="mt-4 text-center">
-          <Link to="/forgotPassword" className="text-indigo-500 hover:underline">
+          <Link to="/otp" className="text-indigo-500 hover:underline">
             Forgot Password?
           </Link>
         </div>
         <div className="mt-2 text-center">
           <p className="text-black">Don't have an account?{' '}
-          <Link to="/register" className="text-indigo-500 hover:underline">
+          <Link to="/" className="text-indigo-500 hover:underline">
             Register
           </Link>
           </p>

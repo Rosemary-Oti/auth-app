@@ -144,7 +144,7 @@ const Register: React.FC = () => {
               required
             />
             <span
-              className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+              className="absolute inset-y-0 right-0 pr-3 pt-9 flex items-center cursor-pointer"
               onClick={() => setShowPassword(!showPassword)}
             >
               <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
@@ -162,7 +162,7 @@ const Register: React.FC = () => {
               required
             />
             <span
-              className="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer"
+              className="absolute inset-y-0 right-0 pr-3 pt-9 flex items-center cursor-pointer"
               onClick={() => setShowRepeatPassword(!showRepeatPassword)}
             >
               <FontAwesomeIcon icon={showRepeatPassword ? faEyeSlash : faEye} />
@@ -180,7 +180,9 @@ const Register: React.FC = () => {
             Already have an account?{' '}
             <Link to="/login" className="text-indigo-500 hover:underline">Log In</Link>
           </p>
+
         </div>
+        
       </div>
     </div>
   );
