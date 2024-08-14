@@ -4,6 +4,7 @@ import Register from './components/register/Register';
 import Login from './components/login/Login';
 import ForgotPassword from './components/forgotPassword/ForgotPassword';
 import Otp from './components/otp/Otp';
+import Dashboard from './dashboard/Dashboard'
 import './index.css';
 
 const App: React.FC = () => {
@@ -15,6 +16,7 @@ const App: React.FC = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/forgotPassword" element={<ForgotPassword />} />
           <Route path="/otp" element={<Otp />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </div>
     </BrowserRouter>
