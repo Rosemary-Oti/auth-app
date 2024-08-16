@@ -4,7 +4,7 @@ import Register from './components/register/Register';
 import Login from './components/login/Login';
 import ForgotPassword from './components/forgotPassword/ForgotPassword';
 import Otp from './components/otp/Otp';
-import Dashboard from './dashboard/Dashboard'
+import Dashboard from './dashboard/Dashboard';
 import './index.css';
 
 const App: React.FC = () => {
