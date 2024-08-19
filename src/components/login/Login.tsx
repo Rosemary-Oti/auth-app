@@ -1,13 +1,38 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 const Login: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const navigate = useNavigate();
+
+  // Handle email input change
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setEmail(value);
+
+    // If the input is not empty, clear email error 
+    if (value) {
+      setEmailError('');
+    }
+  };
+
+  // Handle password input change
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setPassword(value);
+
+    // Clear password error if the input is not empty
+    if (value) {
+      setPasswordError('');
+    }
+  };
 
   const handleLogin = (event: React.FormEvent) => {
     event.preventDefault();
@@ -31,7 +56,7 @@ const Login: React.FC = () => {
     console.log('Password:', password);
     // Add your login logic here
     navigate('/dashboard');
-    };
+    }
   };
 
   return (
@@ -46,22 +71,38 @@ const Login: React.FC = () => {
               id="email"
               className="w-full px-4 py-3 border border-gray-300 rounded-md bg-gray-200"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={handleEmailChange}  
               placeholder="Enter your email"
             />
-            {emailError && <p className="text-red-500 text-sm mt-1">{emailError}</p>}
+
+            {/* for Email error container with a fixed height */}
+            <div className="h-5">
+            {emailError && <p className="text-red-500 text-sm ">{emailError}</p>}
+            </div>
+
           </div>
-          <div>
+          <div className="relative">
             <label htmlFor="password" className="block font-bold text-gray-600 mb-2">Password</label>
+            <div>
             <input
-              type="password"
+              type="text"
               id="password"
               className="w-full px-4 py-3 border border-gray-300 rounded-md bg-gray-200"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={handlePasswordChange}
               placeholder="Enter your password"
             />
-            {passwordError && <p className="text-red-500 text-sm mt-1">{passwordError}</p>}
+            <span className="absolute inset-y-0 right-0 flex items-center pr-3 pt-4 cursor-pointer"
+            onClick={() => setShowPassword(!showPassword)}>
+              <FontAwesomeIcon icon={showPassword ? faEyeSlash : faEye} />
+            </span>
+            </div>
+
+            {/* for Password error container with a fixed height */}
+            <div className="h-5">
+            {passwordError && <p className="text-red-500 text-sm">{passwordError}</p>}
+            </div>
+            
           </div>
           <button
             type="submit"
