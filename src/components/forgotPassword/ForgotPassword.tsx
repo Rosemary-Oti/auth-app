@@ -167,7 +167,7 @@ const ForgotPassword: React.FC = () => {
               placeholder="New password"
               ref={newPasswordRef}
             />
-            <div className="h-3">
+            <div className="h-2">
               {newPasswordError && <p className="text-red-500 text-sm">{newPasswordError}</p>}
             </div>
           </div>
@@ -181,7 +181,7 @@ const ForgotPassword: React.FC = () => {
               onChange={handleConfirmNewPasswordChange}
               placeholder="Confirm new password"
             />
-            <div className="h-3">
+            <div className="h-2">
               {confirmNewPasswordError && <p className="text-red-500 text-sm">{confirmNewPasswordError}</p>}
             </div>
           </div>
