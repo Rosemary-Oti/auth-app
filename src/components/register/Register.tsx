@@ -84,7 +84,7 @@ const Register: React.FC = () => {
   return (
     <div className="h-screen bg-indigo-500 flex items-center justify-center">
       <div className="w-full max-w-lg p-8 bg-white rounded-md shadow-md">
-        <h2 className="text-3xl font-bold text-indigo-600 mb-6 text-center">Register</h2>
+        <h2 className="text-3xl font-bold text-green-600 mb-6 text-center">Register</h2>
 
         {/* for email */}
         <form onSubmit={handleRegister} className="space-y-6">
