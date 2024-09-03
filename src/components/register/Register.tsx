@@ -21,7 +21,7 @@ const Register: React.FC = () => {
     const value = e.target.value;
     setEmail(value);
 
-    // clear emailError if the input  is not empty
+    // clear emailError if the input is not empty
     if (value) {
       setEmailError('');
     }
